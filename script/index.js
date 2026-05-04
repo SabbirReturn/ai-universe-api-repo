@@ -33,4 +33,5 @@ let displayShow = (results)=>{
     });
 }
 
+// loadInformation()
 loadInformation()
