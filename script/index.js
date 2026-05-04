@@ -29,6 +29,7 @@ let displayShow = (results)=>{
         
 
         `
+        // cardContainer.appendChild(cardDetails);
         cardContainer.appendChild(cardDetails);
     });
 }
