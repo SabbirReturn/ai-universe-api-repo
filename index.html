@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +9,13 @@
      <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="w-full h-full">
+<body class="w-full min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
     <header>
         <div class="text-center py-10">
-            <h1 class="text-3xl text-[#111111]">AI universe Hub</h1>
+            <h1 class="text-5xl font-extrabold text-white tracking-wide">AI universe Hub</h1>
+            <p class="mt-4 text-gray-300 text-lg">
+                Explore the most powerful AI tools in one place
+            </p>
             <div class="py-10">
                 <button class="group group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-rose-300 hover:before:[box-shadow:_20px_20px_20px_30px_#a21caf] duration-500 before:duration-500 hover:duration-500 hover:after:-right-8 hover:before:right-12 hover:before:-bottom-8 hover:before:blur  origin-left hover:decoration-2 hover:text-rose-300 relative bg-neutral-800 h-16 w-64 border text-center p-3 text-gray-50 text-base font-bold rounded-lg  overflow-hidden  before:absolute before:w-12 before:h-12 before:content[''] before:right-1 before:top-1 before:z-10 before:bg-violet-500 before:rounded-full before:blur-lg  after:absolute after:z-10 after:w-20 after:h-20 after:content['']  after:bg-rose-300 after:right-8 after:top-3 after:rounded-full after:blur-lg">
                 Sort By Date
@@ -44,7 +47,7 @@
                 </div> -->
             </div>
             <div class="text-center mt-5">
-                <button onclick="showBtn()" id="showAllButton" class="btn btn-dash btn-accent hidden">Show All</button>
+                <button onclick="showBtn()" id="showAllButton" class="hidden mt-6 px-8 py-3 rounded-full bg-cyan-400 hover:bg-cyan-300 text-black font-bold duration-300">Show All</button>
             </div>
         </section>
     </main>

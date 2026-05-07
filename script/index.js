@@ -21,26 +21,32 @@ let displayShow = (results,isShowAll)=>{
         }
         results.forEach( result => {
         let cardDetails = document.createElement('div');
-        cardDetails.classList = 'relative flex w-full flex-col rounded-xl bg-white    bg-clip-border text-gray-700 shadow-md ';
+        cardDetails.classList = 'group relative flex w-full flex-col rounded-3xl bg-white/10 backdrop-blur-lg border border-white/10 text-white shadow-2xl overflow-hidden hover:scale-105 duration-300';
         cardDetails.innerHTML=`
-                    <img class="w-full h-full" src="${result?.image}" alt="">
-                    <div class="p-6">
-                        <h5 id="title" class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">Feature: <br>
+                    <img class="w-full h-60 object-cover group-hover:scale-110 duration-500" src="${result?.image}" alt="">
+                    <div class="p-5 space-y-3">
+                        <h5 id="title" class="text-2xl font-bold text-cyan-300">Feature: <br>
                         ${result.features[0]}
                         </h5>
-                        <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc felis ligula. 
+                        <p class="text-gray-300 text-sm   leading-relaxed">
+                            Discover advanced AI solutions for productivity, creativity and automation.
                         </p>
                     </div>
                     <hr>
                     <div class="p-6 pt-0 flex justify-between">
                         <div>
-                            <h2>${result.name}</h2>
-                            <p>${result.published_in}</p>
+                            <h2 class="text-xl font-bold text-white">
+                                ${result.name}
+                            </h2>
+                            <p class="text-sm text-gray-400">
+                                📅 ${result.published_in}
+                            </p>
                         </div>
                         <button>
                             <div class="dropdown dropdown-right">
-                            <div class="btn m-1 rounded-3xl ">➡️</div>
+                            <div class="btn btn-circle bg-cyan-400 border-none hover:bg-cyan-300 text-black">
+                                ➜
+                            </div>
                             
                             </div>
                         </button>
