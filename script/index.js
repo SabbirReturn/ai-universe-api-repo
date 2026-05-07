@@ -5,7 +5,6 @@ let loadInformation = async(isShowAll) =>{
     displayShow(results,isShowAll)
 }
 let displayShow = (results,isShowAll)=>{
-    console.log(results);
     
     let cardContainer = document.getElementById('cardContainer')
     cardContainer.textContent = '';
@@ -64,5 +63,4 @@ let showBtn = (isShowAll)=>{
     loadInformation(true);
 }
 
-// loadInformation()
 loadInformation()
