@@ -1,17 +1,29 @@
-let loadInformation = async() =>{
+let loadInformation = async(isShowAll) =>{
     let res = await fetch('https://openapi.programming-hero.com/api/ai/tools')
     let data = await res.json();
     let results = data.data.tools
-    displayShow(results)
+    displayShow(results,isShowAll)
 }
-let displayShow = (results)=>{
+let displayShow = (results,isShowAll)=>{
     console.log(results);
+    
     let cardContainer = document.getElementById('cardContainer')
-    results.forEach( result => {
+    cardContainer.textContent = '';
+        let showAllButton = document.getElementById('showAllButton')
+        if(results.length>8 && !isShowAll){
+            showAllButton.classList.remove('hidden')
+        }
+        else{
+            showAllButton.classList.add('hidden')
+        }
+        if(!isShowAll){
+            results = results.slice(0,8);
+        }
+        results.forEach( result => {
         let cardDetails = document.createElement('div');
         cardDetails.classList = 'relative flex w-full flex-col rounded-xl bg-white    bg-clip-border text-gray-700 shadow-md ';
         cardDetails.innerHTML=`
-                    <img class="w-full h-full" src="${result?.image??"Not Found"}" alt="">
+                    <img class="w-full h-full" src="${result?.image}" alt="">
                     <div class="p-6">
                         <h5 id="title" class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">Feature: <br>
                         ${result.features[0]}
@@ -39,6 +51,11 @@ let displayShow = (results)=>{
         // cardContainer.appendChild(cardDetails);
         cardContainer.appendChild(cardDetails);
     });
+}
+
+// show Button
+let showBtn = (isShowAll)=>{
+    loadInformation(true);
 }
 
 // loadInformation()
